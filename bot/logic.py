@@ -3,7 +3,7 @@ import json
 
 api_sessions = dict()
 
-with open('replies.json', 'r', encoding='utf-8') as f:
+with open('bot/replies.json', 'r', encoding='utf-8') as f:
     replies = json.load(f)
 
 def process(user, text):

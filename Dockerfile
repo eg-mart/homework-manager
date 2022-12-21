@@ -5,4 +5,4 @@ RUN echo "Installing dependencies..."
 RUN python -m pip install -r requirements.txt
 RUN echo "Starting web app..."
 EXPOSE 5000
-CMD python main.py ; python bot/main.py
+CMD python main.py &; python bot/main.py &
