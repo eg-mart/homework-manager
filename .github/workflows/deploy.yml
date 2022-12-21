@@ -43,6 +43,9 @@ jobs:
 
     - name: Start new docker container
       uses: appleboy/ssh-action@master
+      env:
+        TOKEN: ${{ secrets.VK_TOKEN }}
+        GROUP_ID: ${{ secrets.VK_GROUP_ID }}
       with:
         HOST: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
@@ -53,7 +56,7 @@ jobs:
           --mount source=hw-data,destination=/app/data 
           -p ${{ secrets.APP_PORT }}:5000 
           --name hw-manager 
-          -e "TOKEN=${{ secrets.VK_TOKEN }}"
-          -e "GROUP_ID=${{ secrets.VK_GROUP_ID }}"
+          -e "TOKEN=$TOKEN"
+          -e "GROUP_ID=$GROUP_ID"
           -d hw-manager 
     
