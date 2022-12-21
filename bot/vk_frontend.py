@@ -21,6 +21,7 @@ def send(user, text):
                      random_id=random.randint(0, 2 ** 64))
 
 def run():
+    print(os.environ.get("TOKEN"))
     longpoll = VkBotLongPoll(get_session(), group_id=os.environ.get("GROUP_ID"))
 
     for event in longpoll.listen():
