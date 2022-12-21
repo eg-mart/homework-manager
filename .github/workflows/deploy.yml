@@ -48,5 +48,5 @@ jobs:
         USERNAME: ${{ secrets.USERNAME }}
         PORT: ${{ secrets.PORT }}
         KEY: ${{ secrets.SSHKEY }}
-        script: docker run -p ${{ secrets.APP_PORT }}:5000 --name hw-manager -d hw-manager
+        script: docker run --mount source=hw-data,destination=/data -p ${{ secrets.APP_PORT }}:5000 --name hw-manager -d hw-manager
     
