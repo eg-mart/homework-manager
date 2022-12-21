@@ -17,7 +17,7 @@ def create_session():
 def global_init():
     global __Session
 
-    conn_str = f'sqlite:///database/data/sqlite.db'
+    conn_str = f'sqlite:///data/sqlite.db'
 
     engine = sa.create_engine(conn_str, echo=True, future=True)
     __Session = orm.sessionmaker(bind=engine)
